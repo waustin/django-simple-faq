@@ -1,5 +1,6 @@
 from django.views.generic import ListView, DetailView
 from django.shortcuts import get_object_or_404
+from django.conf import settings
 
 from .models import Question, Category
 
@@ -9,7 +10,8 @@ class QuestionDetailView(DetailView):
 
 
 class QuestionListView(ListView):
-    paginate_by = 5
+    def get_paginate_by(self):
+        return settings.SIMPLE_FAQ_PAGINATE_BY
 
     def get_queryset(self):
         self.category = None

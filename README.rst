@@ -8,3 +8,7 @@ Question objects contain question and answer text fields and a display order
 field to control sorting. 
 
 Category objects allow questions to be organized into groups.
+
+APP_SETTINGS:
+- SIMPLE_FAQ_PAGINATE_BY - number of questions to paginate by (set to None to
+  disable pagination)
