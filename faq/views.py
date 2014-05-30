@@ -13,7 +13,7 @@ class QuestionListView(ListView):
     def get_paginate_by(self):
         return settings.SIMPLE_FAQ_PAGINATE_BY
 
-    def get_queryset(self):
+    def get_queryset(self, queryset):
         self.category = None
         if 'category_slug' in self.kwargs:
             self.category = get_object_or_404(
