@@ -10,10 +10,10 @@ class QuestionDetailView(DetailView):
 
 
 class QuestionListView(ListView):
-    def get_paginate_by(self):
+    def get_paginate_by(self, queryset):
         return settings.SIMPLE_FAQ_PAGINATE_BY
 
-    def get_queryset(self, queryset):
+    def get_queryset(self):
         self.category = None
         if 'category_slug' in self.kwargs:
             self.category = get_object_or_404(
